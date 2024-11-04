@@ -7,6 +7,7 @@ page 50106 "Comment Sheet"
     ApplicationArea = All;
     Caption = 'Comment Sheet';
     PageType = List;
+    UsageCategory = Lists;
     SourceTable = "Comment Line";
     
     layout

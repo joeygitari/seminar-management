@@ -138,5 +138,9 @@
 //         {
 //             Clustered = true;
 //         }
+//         key(Keys; "Document No.", "Posting Date")
+//         {
+//             Clustered = false;
+//         }
 //     }
 // }

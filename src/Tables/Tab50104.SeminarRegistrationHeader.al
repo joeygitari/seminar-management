@@ -296,6 +296,13 @@ table 50104 "Seminar Registration Header"
         SeminarSetup: Record "Seminar Setup";
         NoSeriesMgt: Codeunit "NoSeriesManagement";
     begin
+        if GetFilter("Seminar No.") <> '' then 
+        begin
+            if GetRangeMin("Seminar No.") = GetRangeMax("Seminar No.") then
+            begin
+                Validate("Seminar No.", GetRangeMin("Seminar No."));
+            end;
+        end;
         IF "No." = '' THEN BEGIN
             SeminarSetup.GET;
             SeminarSetup.TESTFIELD("Seminar Registration Nos.");

@@ -3,8 +3,9 @@ namespace SeminarMgt.SeminarMgt;
 page 50102 "Seminar Setup Page"
 {
     ApplicationArea = All;
-    Caption = 'Seminar Setup Page';
+    Caption = 'Seminar Setup';
     PageType = List;
+    UsageCategory = Lists;
     SourceTable = "Seminar Setup";
     
     layout
@@ -13,10 +14,10 @@ page 50102 "Seminar Setup Page"
         {
             repeater(General)
             {
-                field("Primary Key"; Rec."Primary Key")
-                {
-                    ToolTip = 'Specifies the value of the "Primary Key field.', Comment = '%';
-                }
+                // field("Primary Key"; Rec."Primary Key")
+                // {
+                //     ToolTip = 'Specifies the value of the "Primary Key field.', Comment = '%';
+                // }
                 field("Seminar Nos."; Rec."Seminar Nos.")
                 {
                     ToolTip = 'Specifies the value of the Seminar Nos. field.', Comment = '%';

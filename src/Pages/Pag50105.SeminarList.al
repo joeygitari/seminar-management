@@ -8,6 +8,7 @@ page 50105 "Seminar List"
     SourceTable = Seminar;
     Editable = false;
     CardPageId = "Seminar Card";
+    UsageCategory = Lists;
     
     layout
     {
@@ -71,23 +72,61 @@ page 50105 "Seminar List"
     {
         area(Navigation)
         {
-            action(Comments)
+            group(RelatedInformation)
             {
-                ApplicationArea = All;
-                Caption = 'Co&mments';
-                Image = Comment;
-                
-                // Define the action to run the Comment Sheet page
-                RunObject = Page "Comment Sheet";
-                RunPageLink = "No." = FIELD("No."), "Table Name" = CONST(Seminar);
+                action(Comments)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Co&mments';
+                    Image = Comment;
+                    
+                    // Define the action to run the Comment Sheet page
+                    RunObject = Page "Comment Sheet";
+                    RunPageLink = "No." = FIELD("No."), "Table Name" = CONST(Seminar);
+                }
+                // action("Ledger Entries")
+                // {
+                //     Caption = 'Ledger Entries';
+                //     Image = WarrantyLedger;
+                //     Promoted = true;
+                //     PromotedCategory = Process;
+                //     PromotedIsBig = true;
+                //     ShortcutKey = 'Ctrl+F7';
+                //     RunObject = Page "Seminar Ledger Entries";
+                //     RunPageLink = "Seminar No." = FIELD("No.");
+                // }
+                action("Seminar Setup")
+                {
+                    ApplicationArea = All;
+                    Caption = '&Seminar';
+                    
+                    RunObject = Page "Seminar Setup";
+                    RunPageLink = "Seminar Nos." = FIELD("No.");
+                }
+
+                // action(Registrations)
+                // {
+                //     Caption = '&Registrations';
+                //     Image = Timesheet;
+                //     Promoted = true;
+                //     PromotedCategory = Process;
+                //     RunObject = Page "Seminar Registration";
+                //     RunPageLink = "Seminar No." = FIELD("No.");
+                // }
             }
-            action("Seminar Setup")
+            group(NewDocumentItems)
             {
-                ApplicationArea = All;
-                Caption = '&Seminar';
-                
-                RunObject = Page "Seminar Setup";
-                RunPageLink = "Seminar Nos." = FIELD("No.");
+                action("Seminar Registration")
+                {
+                    Caption = 'Seminar Registration';
+                    RunPageMode = Create;
+                    Image = NewTimesheet;
+                    Promoted = true;
+                    PromotedCategory = New;
+                    PromotedIsBig = true;
+                    RunObject = Page "Seminar Registration";
+                    RunPageLink = "Seminar No." = FIELD("No.");
+                }
             }
         }
     }
