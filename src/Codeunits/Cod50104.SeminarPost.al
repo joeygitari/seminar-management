@@ -28,8 +28,11 @@
 //         SourceCodeSetup: Record "Source Code Setup";
 //         SeminarCommentLine: Record "Seminar Comment Line";
 //         PstdSeminarRegLine: Record "Posted Seminar Reg. Line";
+//         SourceCode: Code[20];
+//         Room: Record 156;
+//         Instructor: Record 156;
 
-//     procedure CopyCommentLines()
+//     procedure CopyCommentLines(var SeminarCommentLine2: Record "Seminar Comment Line")
 //     begin
 //         SeminarCommentLine.Reset;
 //         SeminarCommentLine.SetRange("Document Type", FromDocumentType);
@@ -57,9 +60,11 @@
 //         end;
 //     end;
 
-//     procedure PostResJnlLine(): Integer
+//     procedure PostResJnlLine(Resource: Record 156): Integer
 //     begin
 //         with SemRegHeader do begin
+//             if SourceCodeSetup.Get then
+//                 SourceCode := SourceCodeSetup.Seminar;
 //             Resource.TestField("Quantity Per Day");
 //             ResJnlLine.init;
 //             ResJnlLine."Entry Type" := ResJnlLine."Entry Type"::Usage;
@@ -71,7 +76,7 @@
 //             ResJnlLine.Description := "Seminar Name";   
 //             ResJnlLine."Gen. Prod. Posting Group" := "Gen. Prod. Posting Group"; 
 //             ResJnlLine."Posting No. Series" := "Posting No. Series"; 
-//             ResJnlLine."Source Code" := "Source Code"; 
+//             ResJnlLine."Source Code" := SourceCode; 
 //             ResJnlLine."Resource No." := Resource."No."; 
 //             ResJnlLine."Unit of Measure Code" := Resource."Base Unit of Measure"; 
 //             ResJnlLine."Unit Cost" := Resource."Unit Cost"; 
@@ -87,7 +92,7 @@
 //         EXIT(ResLedgEntry."Entry No."); 
 //     end;
 
-//     procedure PostSeminarJnlLine()
+//     procedure PostSeminarJnlLine(var ChargeType: Enum "Source Type") 
 //     begin
 //         with SemRegHeader do begin
 //             SeminarJnlLine.INIT; 
@@ -106,7 +111,7 @@
 //             SeminarJnlLine."Reason Code" := "Reason Code"; 
 //             SeminarJnlLine."Posting No. Series" := "Posting No. Series";
 
-//             CASE ChargeType OF 
+//             case ChargeType of 
 //                 ChargeType::Instructor: 
 //                     BEGIN 
 //                         Instructor.GET("Instructor Resource No."); 
@@ -122,8 +127,7 @@
 //                         SeminarJnlLine.Description := Room.Name; 
 //                         SeminarJnlLine.Type := SeminarJnlLine.Type::Resource; 
 //                         SeminarJnlLine.Chargeable := FALSE; 
-//                         SeminarJnlLine.Quantity := Duration; 
-//                         // Post to resource ledger 
+//                         SeminarJnlLine.Quantity := Duration;
 //                         SeminarJnlLine."Res. Ledger Entry No." := PostResJnlLine(Room); 
 //                     END; 
 //                 ChargeType::Participant: 
@@ -154,12 +158,15 @@
 //     end;
 
 //     procedure PostCharges()
+//     var
+//         ChargeType: Enum "Source Type";
 //     begin
 //         SeminarCharge.Reset;
 //         SeminarCharge.SetRange("Document No.", SemRegHeader."No.");
 //         if SeminarCharge.FindSet(false, false) then begin
 //             repeat
-//                 PostSeminarJnlLine();
+//                 ChargeType := ChargeType::Charge;
+//                 PostSeminarJnlLine(ChargeType);
 //             until SeminarCharge.NEXT = 0;
 //         end;
 //     end;

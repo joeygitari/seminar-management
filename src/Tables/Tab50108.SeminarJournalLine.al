@@ -51,10 +51,9 @@ table 50108 "Seminar Journal Line"
         {
             Caption = 'Quantity';
         }
-        field(11; "Charge Type"; Option)
+        field(11; "Charge Type"; Enum "Source Type")
         {
             Caption = 'Charge Type';
-            OptionMembers = Instructor,Room,Participant;
         }
         field(12; "Participant Contact No."; Code[20])
         {
@@ -117,7 +116,7 @@ table 50108 "Seminar Journal Line"
         field(26; "Source Type"; Option)
         {
             Caption = 'Source Type';
-            OptionMembers = value1,value2;
+            OptionMembers = Seminar;
         }
         field(27; "Source No."; Code[20])
         {
