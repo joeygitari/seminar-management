@@ -16,11 +16,10 @@ table 50106 "Seminar Charge"
             Caption = 'Line No.';
             DataClassification = CustomerContent;
         }
-        field(3; "Type"; Option)
+        field(3; "Type"; Enum "Seminar Charge Type")
         {
             Caption = 'Type';
             DataClassification = CustomerContent;
-            OptionMembers = Resource,"G/L Account";
 
             trigger OnValidate()
             begin

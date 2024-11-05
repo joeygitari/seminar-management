@@ -189,11 +189,10 @@ table 50111 "Posted Seminar Reg. Header"
             Caption = 'Seminar Name';
             DataClassification = CustomerContent;
         }
-        field(19; Status; Option)
+        field(19; Status; Enum "Posted Seminar Status")
         {
             Caption = 'Status';
             DataClassification = CustomerContent;
-            OptionMembers = Open,Planning,Canceled;
         }
         field(20; "Duration"; Decimal)
         {

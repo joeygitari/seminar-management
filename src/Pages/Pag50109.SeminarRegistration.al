@@ -1,6 +1,7 @@
 namespace SeminarMgt.SeminarMgt;
 
 using Microsoft.Sales.Customer;
+using SeminarManagement.SeminarManagement;
 // using SeminarManagement.SeminarManagement;
 
 page 50109 "Seminar Registration"
@@ -175,23 +176,23 @@ page 50109 "Seminar Registration"
             }
         }
     }
-    // actions
-    // {
-    //     area(processing)
-    //     {
-    //         group(Posting)
-    //         {
-    //             action(Post)
-    //             {
-    //                 ApplicationArea = All;
-    //                 Caption = 'P&ost';
-    //                 Image = PostDocument;
-    //                 Promoted = true;
-    //                 PromotedCategory = Process;
-    //                 ShortcutKey = 'F9';
-    //                 RunObject = Codeunit "Seminar-Post";
-    //             }
-    //         }
-    //     }
-    // }
+    actions
+    {
+        area(processing)
+        {
+            group(Posting)
+            {
+                action(Post)
+                {
+                    ApplicationArea = All;
+                    Caption = 'P&ost';
+                    Image = PostDocument;
+                    Promoted = true;
+                    PromotedCategory = Process;
+                    ShortcutKey = 'F9';
+                    RunObject = Codeunit "Seminar-Post";
+                }
+            }
+        }
+    }
 }

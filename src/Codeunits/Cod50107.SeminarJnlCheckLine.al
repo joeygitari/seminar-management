@@ -2,7 +2,7 @@ namespace SeminarManagement.SeminarManagement;
 using Microsoft.Finance.GeneralLedger.Setup;
 using System.Security.User;
 
-codeunit 50100 "Seminar Jnl.-Check Line"
+codeunit 50107 "Seminar Jnl.-Check Line"
 {
     TableNo = "Seminar Journal Line";
 

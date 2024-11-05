@@ -21,10 +21,10 @@ table 50109 "Seminar Ledger Entry"
         {
             Caption = 'Document Date';
         }
-        field(5; "Entry Type"; Option)
+        field(5; "Entry Type"; Enum "Seminar Journal Entry Type")
         {
             Caption = 'Entry Type';
-            OptionMembers = Usage;
+            DataClassification = CustomerContent;
         }
         field(6; "Document No."; Code[20])
         {
@@ -38,15 +38,15 @@ table 50109 "Seminar Ledger Entry"
         {
             Caption = 'Bill-to Customer No.';
         }
-        field(9; "Charge Type"; Option)
+        field(9; "Charge Type"; Enum "Seminar Journal Charge Type")
         {
             Caption = 'Charge Type';
-            OptionMembers = Instructor,Room,Participant;
+            DataClassification = CustomerContent;
         }
-        field(10; "Type"; Option)
+        field(10; "Type"; Enum "Seminar Charge Type")
         {
             Caption = 'Type';
-            OptionMembers = Resource;
+            DataClassification = CustomerContent;
         }
         field(11; Quantity; Decimal)
         {
@@ -92,10 +92,10 @@ table 50109 "Seminar Ledger Entry"
         {
             Caption = 'Res. Ledger Entry No.';
         }
-        field(22; "Source Type"; Option)
+        field(22; "Source Type"; Enum "Seminar Journal Source Type")
         {
             Caption = 'Source Type';
-            OptionMembers = value1,value2;
+            DataClassification = CustomerContent;
         }
         field(23; "Source No."; Code[20])
         {

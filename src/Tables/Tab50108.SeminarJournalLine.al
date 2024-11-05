@@ -115,10 +115,10 @@ table 50108 "Seminar Journal Line"
         {
             Caption = 'Res. Ledger Entry No.';
         }
-        field(26; "Source Type"; Option)
+        field(26; "Source Type"; Enum "Seminar Journal Source Type")
         {
             Caption = 'Source Type';
-            OptionMembers = Seminar;
+            DataClassification = CustomerContent;
         }
         field(27; "Source No."; Code[20])
         {

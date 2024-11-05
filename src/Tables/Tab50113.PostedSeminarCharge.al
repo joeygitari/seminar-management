@@ -16,11 +16,10 @@ table 50113 "Posted Seminar Charge"
             Caption = 'Line No.';
             DataClassification = CustomerContent;
         }
-        field(3; "Type"; Option)
+        field(3; "Type"; Enum "Seminar Charge Type")
         {
             Caption = 'Type';
             DataClassification = CustomerContent;
-            OptionMembers = Resource,"G/L Account";
         }
         field(4; Registered; Boolean)
         {
