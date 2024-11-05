@@ -108,4 +108,25 @@ page 50113 "Posted Seminar Registration"
             }
         }
     }
+    actions
+    {
+        area(processing)
+        {
+            action(Navigate)
+            {
+                Caption = '&Navigate';
+                Image = Navigate;
+                Promoted = true;
+                PromotedCategory = Process;
+
+                trigger OnAction()
+                begin
+                    Navigate.SetDoc(Rec."Posting Date",Rec."No.");
+                    Navigate.Run;
+                end;
+            }
+        }
+
+    }
+    var Navigate: Page 344;
 }

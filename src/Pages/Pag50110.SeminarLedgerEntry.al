@@ -109,4 +109,25 @@ page 50110 "Seminar Ledger Entries"
             }
         }
     }
+    actions
+    {
+        area(processing)
+        {
+            action(Navigate)
+            {
+                Caption = '&Navigate';
+                Image = Navigate;
+                Promoted = true;
+                PromotedCategory = Process;
+
+                trigger OnAction()
+                begin
+                    Navigate.SetDoc(Rec."Posting Date",Rec."Document No.");
+                    Navigate.Run;
+                end;
+            }
+        }
+
+    }
+    var Navigate: Page 344;
 }

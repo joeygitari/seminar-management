@@ -2,6 +2,8 @@ table 50109 "Seminar Ledger Entry"
 {
     Caption = 'Seminar Ledger Entry';
     DataClassification = ToBeClassified;
+    LookupPageId = "Seminar Ledger Entries";
+    DrillDownPageId = "Seminar Ledger Entries";
 
     fields
     {

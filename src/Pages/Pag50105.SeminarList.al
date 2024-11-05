@@ -84,17 +84,17 @@ page 50105 "Seminar List"
                     RunObject = Page "Comment Sheet";
                     RunPageLink = "No." = FIELD("No."), "Table Name" = CONST(Seminar);
                 }
-                // action("Ledger Entries")
-                // {
-                //     Caption = 'Ledger Entries';
-                //     Image = WarrantyLedger;
-                //     Promoted = true;
-                //     PromotedCategory = Process;
-                //     PromotedIsBig = true;
-                //     ShortcutKey = 'Ctrl+F7';
-                //     RunObject = Page "Seminar Ledger Entries";
-                //     RunPageLink = "Seminar No." = FIELD("No.");
-                // }
+                action("Ledger Entries")
+                {
+                    Caption = 'Ledger Entries';
+                    Image = WarrantyLedger;
+                    Promoted = true;
+                    PromotedCategory = Process;
+                    PromotedIsBig = true;
+                    ShortcutKey = 'Ctrl+F7';
+                    RunObject = Page 50110;
+                    RunPageLink = "Seminar No." = FIELD("No.");
+                }
                 action("Seminar Setup")
                 {
                     ApplicationArea = All;
@@ -104,15 +104,15 @@ page 50105 "Seminar List"
                     RunPageLink = "Seminar Nos." = FIELD("No.");
                 }
 
-                // action(Registrations)
-                // {
-                //     Caption = '&Registrations';
-                //     Image = Timesheet;
-                //     Promoted = true;
-                //     PromotedCategory = Process;
-                //     RunObject = Page "Seminar Registration";
-                //     RunPageLink = "Seminar No." = FIELD("No.");
-                // }
+                action(Registrations)
+                {
+                    Caption = '&Registrations';
+                    Image = Timesheet;
+                    Promoted = true;
+                    PromotedCategory = Process;
+                    RunObject = Page "Seminar Registration";
+                    RunPageLink = "Seminar No." = FIELD("No.");
+                }
             }
             group(NewDocumentItems)
             {

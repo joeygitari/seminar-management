@@ -2,6 +2,8 @@ table 50111 "Posted Seminar Reg. Header"
 {
     Caption = 'Posted Seminar Reg. Header';
     DataClassification = ToBeClassified;
+    LookupPageId = "Posted Seminar Registration";
+    DrillDownPageId = "Posted Seminar Registration";
     
     fields
     {
