@@ -51,10 +51,12 @@ table 50108 "Seminar Journal Line"
         {
             Caption = 'Quantity';
         }
-        field(11; "Charge Type"; Enum "Source Type")
+        field(11; "Charge Type"; Enum "Seminar Journal Charge Type")
         {
             Caption = 'Charge Type';
+            DataClassification = CustomerContent;
         }
+
         field(12; "Participant Contact No."; Code[20])
         {
             Caption = 'Participant Contact No.';
@@ -71,10 +73,10 @@ table 50108 "Seminar Journal Line"
         {
             Caption = 'Bill-to Customer No.';
         }
-        field(16; "Entry Type"; Option)
+        field(16; "Entry Type"; Enum "Seminar Journal Entry Type")
         {
             Caption = 'Entry Type';
-            OptionMembers = value1,value2;
+            DataClassification = CustomerContent;
         }
         field(17; "Document No."; Code[20])
         {
@@ -84,10 +86,10 @@ table 50108 "Seminar Journal Line"
         {
             Caption = 'Description';
         }
-        field(19; "Type"; Option)
+        field(19; "Type"; Enum "Seminar Charge Type")
         {
             Caption = 'Type';
-            OptionMembers = value1,value2;
+            DataClassification = CustomerContent;
         }
         field(20; "Unit Price"; Decimal)
         {

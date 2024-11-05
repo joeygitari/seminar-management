@@ -5,11 +5,10 @@ table 50107 "Seminar Comment Line"
 
     fields
     {
-        field(1; "Document Type"; Option)
+        field(1; "Document Type"; Enum "Seminar Document Type")
         {
             Caption = 'Document Type';
-            DataClassification = ToBeClassified;
-            OptionMembers = "Seminar Registration","Posted Seminar Registration";
+            DataClassification = CustomerContent;
         }
         field(2; "No."; Code[20])
         {
