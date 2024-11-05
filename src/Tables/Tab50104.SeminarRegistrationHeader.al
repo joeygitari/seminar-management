@@ -31,7 +31,7 @@ table 50104 "Seminar Registration Header"
         {
             Caption = 'Room Resource No.';
             DataClassification = CustomerContent;
-            TableRelation = Resource where(Type = const(Person));
+            TableRelation = Resource where(Type = const(Room));
             trigger OnValidate()
             var
                 SeminarRoom: Record Resource;
@@ -364,6 +364,20 @@ table 50104 "Seminar Registration Header"
                         "Maximum Participants" := SeminarRoom."Maximum Participants";
                     end
                 end;
+        end;
+    end;
+
+    procedure AssistEdit(OldSeminarRegHeader: Record "Seminar Registration Header"): Boolean;
+    var 
+        SeminarSetup: Record "Seminar Setup";
+        NoSeriesMgt: Codeunit "NoSeriesManagement";
+
+    begin
+        SeminarSetup.Get();
+        SeminarSetup.TestField("Seminar Registration Nos.");
+        if NoSeriesMgt.SelectSeries(SeminarSetup."Seminar Registration Nos.", OldSeminarRegHeader."No. Series", Rec."No. Series") then begin
+            NoSeriesMgt.SetSeries(Rec."No.");
+            exit(true);
         end;
     end;
 

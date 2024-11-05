@@ -189,7 +189,7 @@ codeunit 50104 "Seminar-Post"
             TESTFIELD(Duration);
             TESTFIELD("Instructor Resource No."); 
             TESTFIELD("Room Resource No."); 
-            TESTFIELD(Status,Status::Closed);
+            TESTFIELD(Status,SemRegHeader.Status::Closed);
             SeminarRegLine.RESET; 
             SeminarRegLine.SETRANGE("Document No.","No."); 
             IF SeminarRegLine.ISEMPTY THEN 

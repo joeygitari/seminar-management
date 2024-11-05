@@ -3,10 +3,11 @@ namespace SeminarManagement.SeminarManagement;
 page 50114 "Posted Seminar Reg. List"
 {
     ApplicationArea = All;
-    Caption = 'Posted Seminar Reg. List';
+    Caption = 'Posted Seminar Registration List';
     PageType = List;
     SourceTable = "Posted Seminar Reg. Header";
     UsageCategory = Lists;
+    Editable = false;
     
     layout
     {

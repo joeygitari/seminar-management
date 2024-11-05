@@ -24,6 +24,12 @@ page 50109 "Seminar Registration"
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the number of the involved entry or record, according to the specified number series.';
+
+                    trigger OnAssistEdit();
+                    begin
+                        if Rec.AssistEdit(xRec) then
+                            CurrPage.Update();
+                    end;
                 }
                 field("Starting Date"; Rec."Starting Date")
                 {

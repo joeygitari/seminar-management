@@ -188,7 +188,7 @@ table 50105 "Seminar Registration Line"
     var
         SeminarRegHeader: Record "Seminar Registration Header";
     begin
-        SeminarRegHeader.Get();
+        GetSeminarRegHeader(SeminarRegHeader);
         "Registration Date" := WorkDate;
         "Price" := SeminarRegHeader."Price";
         Amount := SeminarRegHeader."Price";
