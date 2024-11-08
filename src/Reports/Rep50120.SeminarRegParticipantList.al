@@ -48,6 +48,7 @@ report 50120 "Seminar Reg.-Participant List"
             {
                 DataItemTableView = SORTING("Document No.", "Line No.");
                 DataItemLink = "Document No." = Field("No.");
+                DataItemLinkReference = SeminarRegistrationHeader;  
 
                 column(BilltoCustomerNo_SeminarRegistrationLine; "Bill-to Customer No.")
                 {

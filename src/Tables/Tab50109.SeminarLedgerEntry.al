@@ -144,5 +144,10 @@ table 50109 "Seminar Ledger Entry"
         {
             Clustered = false;
         }
+        key(SecondaryKey; "Seminar No.","Posting Date","Charge Type","Chargeable")
+        {
+            Clustered = false;
+            SumIndexFields = "Total Price";
+        }
     }
 }
